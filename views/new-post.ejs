@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <link src="/views/partials/header.ejs">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <%- include('partials/header') %>
+        <!-- new-post.ejs -->
+        <form id="postBlogForm" class="postForm" action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="title">Title:</label><br>
+            <textarea type="text" name="title" required></textarea><br>
+            <label for="body">Body:</label><br>
+            <textarea name="body" required></textarea><br>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <label for="image">Upload Image:</label><br>
+                <input type="file" name="image" id="imageUpload" accept="image/*" required />
+                <div class="image-preview" id="imagePreview">
+                    <ion-icon name="image-sharp" class="icon"></ion-icon>
+                </div>
+                <button type="submit" id="submit">Submit</button>
+
+            </form>
+            <%- include('partials/footer') %>
+
+                <script src="/public/js/script.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="/public/js/script.js"></script>
+    <title>Edit Post</title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <form action="/posts/<%= post.id %>/edit-post" id="postEditForm" class="postForm" method="POST"
+            enctype="multipart/form-data">
+            <label for="title">Title:</label><br>
+            <input type="text" name="title" class="til" value="<%= post.title %>"><br>
+
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description"><%= post.body %></textarea><br>
+
+            <label for="currentImage">Current Image:</label><br>
+            <img src="/public/Images/<%= post.image %>" class="currentImage" alt="Current Image"><br>
+
+            <label for="newImage">Change Image:</label><br>
+            <input type="file" name="newImage" id="imageUpload" accept="image/*" required
+                onchange="previewImage(event)" /><br>
+
+
+            <button type="submit" id="submit">Add</button>
+        </form>
+        <%- include('partials/footer') %>
+</body>
+
+</html>
