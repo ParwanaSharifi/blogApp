@@ -97,29 +97,3 @@ app.get('/new-post', (req, res) => {
     res.render('new-post');
 });
 
-/*
-const posts = [];
-
-// Add a new blog post
-app.post('/new-post', (req, res) => {
-    const newPost = {
-        id: uuidv4(),
-        title: req.body.title,
-        content: req.body.content
-    };
-    posts.push(newPost);
-    res.json(newPost);
-});
-
-// Delete a blog post by ID
-app.delete('/posts/:id', (req, res) => {
-    const { id } = req.params;
-    const index = posts.findIndex(post => post.id === id);
-    if (index !== -1) {
-        posts.splice(index, 1);
-        res.send('Post deleted successfully');
-    } else {
-        res.status(404).send('Post not found');
-    }
-});
-*/

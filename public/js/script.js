@@ -23,6 +23,7 @@ function previewImage(event) {
     const imagePreview = document.querySelector('.currentImage');
     imagePreview.src = URL.createObjectURL(event.target.files[0]);
 }
+//new submit notification
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('postBlogForm');
     if (form) {
@@ -32,29 +33,29 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function () {
                 console.log("hello")
                 form.submit();
-            }, 1000); // Adjust the delay time as needed
+            }, 1000);
         });
     }
 });
 
 
-
+//edit notification
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('postEditForm');
     if (form) {
-        form.addEventListener('submit', function (event) {
+        form.addEventListener('submit', function () {
             var notification = document.getElementById('notificationEdit');
             notification.classList.add('show');
             setTimeout(function () {
                 notification.classList.remove('show');
                 setTimeout(function () {
                     form.submit();
-                }, 1000); // Adjust the delay time as needed
+                }, 1000);
             }, 2000);
         });
     }
 });
-
+//delete notification
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('deleteForm');
     if (form) {
@@ -65,8 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 notification.classList.remove('show');
                 setTimeout(function () {
                     form.submit();
-                }, 1000); // Adjust the delay time as needed
+                }, 1000);
             }, 2000);
         });
     }
 });
+
+
